@@ -3,6 +3,7 @@
     background-color: #EEE;
     width: 40px;
     height: 40px;
+    box-shadow: 1px 1px 1px 1px #AAA;
 }
 
 .row {
@@ -20,14 +21,15 @@
     width: 250px;
     border: 1px solid #AAA;
     border-radius: 5px;
-    box-shadow: 5px 5px 10px 5px #AAA;
+    box-shadow: 3px 3px 10px 5px #AAA;
 }
 
 #display {
-    margin: 10px auto;
+    margin: 20px auto 10px auto;
     border: 1px solid #AAA;
     border-radius: 5px;
     width: 80%;
     padding: 5px;
     text-align: right;
+    box-shadow: -1px -1px 1px 1px #AAA;
 }
