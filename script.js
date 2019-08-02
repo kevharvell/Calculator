@@ -41,6 +41,31 @@ const ClearDisplay = () => {
     document.getElementById("display").innerText = "0";
 }
 
+const CalculateParsed = (operatorArr, operandArr) => {
+    let result;
+    let j = 0;
+    for(let i = 0; i < operandArr.length; i+=2) {
+        let tempResult = operate(operatorArr[j], operandArr[i], operandArr[i+1]);
+        j++;
+    }
+}
+
+const ParseExpression = () => {
+    let expressionArr = expression.split("");
+    let operatorArr = [];
+    let operandArr = [];
+    let result;
+    for(let i = 0; i < expressionArr.length; i++) {
+        if(expressionArr[i] == "+") {
+            operatorArr.push(expressionArr[i]);
+        }
+        else {
+            operandArr.push(expressionsArr[i]);
+        }
+    }
+    CalculateParsed(operatorArr, operandArr);
+}
+
 // Initializes button with click event handlers
 const InitHandlers = () => {
     let buttons = document.getElementsByClassName("calcBtn");
@@ -49,6 +74,9 @@ const InitHandlers = () => {
             let btnVal = buttons[i].innerText;
             if(btnVal == "C")
                 ClearDisplay();
+            else if(btnVal == "=") {
+                ParseExpression();
+            }
             else {
                 expression += btnVal;
                 let display = document.getElementById("display");
