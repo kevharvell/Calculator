@@ -105,7 +105,32 @@ const InitHandlers = () => {
             }
         });
     }
-}
+};
+
+const KeyHandlers = () => {
+    document.addEventListener('keydown', (e) => {
+        if(e.key == 'C' || e.key == 'c') {
+            ClearDisplay();
+        } 
+        else if(e.key == '=' || e.key == 'Enter') {
+            expression = ParseExpression();
+            display.innerText = expression;
+        }
+        else if(e.key == '*') {
+            expression += 'x';
+            display.innerText = expression;
+        }
+        else if(!isNaN(e.key) ||
+                e.key == '/' ||
+                e.key == '+' ||
+                e.key == '-' ||
+                e.key == '.') {
+            expression += e.key;
+            display.innerText = expression;
+        }
+    });
+};
 
 // MAIN
 InitHandlers();
+KeyHandlers();
